@@ -4,12 +4,27 @@ const Posts = require('../components/blog/Posts.bs.js').make;
 
 export default ({ data }) => {
   console.log(data);
-  return <Layout> <Posts articles={data.allFile.edges} /> </Layout>
+  return <Layout> <Posts articles={data.articles.edges} /> </Layout>
 };
 
 export const query = graphql`
 query {
-  allFile(filter: {sourceInstanceName: {eq: "articles"}, extension: {eq: "md"}}) {
+  articles: allFile(filter: {sourceInstanceName: {eq: "articles"}, extension: {eq: "md"}}) {
+    edges {
+      node {
+        childMarkdownRemark {
+          html
+          frontmatter {
+            date
+            title
+          }
+          timeToRead
+          id
+        }
+      }
+    }
+  }
+  critics: allFile(filter: {sourceInstanceName: {eq: "pages"}, extension: {eq: "md"}}) {
     edges {
       node {
         childMarkdownRemark {
