@@ -8,12 +8,13 @@ module S = {
       borderBottom(px(5), `dashed, black),
       paddingTop(em(1.)),
       textAlign(`center),
+      minWidth(px(370)),
       selector(
         "& h1",
         [
           fontSize(em(5.)),
           margin(`zero),
-          media("(max-width: 768px)", [fontSize(em(3.))]),
+          media("(max-width: 640px)", [fontSize(em(3.))]),
         ],
       ),
     ]);
@@ -27,6 +28,7 @@ module S = {
     marginBottom(em(0.8)),
     border(px(2), `solid, white),
     fontSize(em(1.5)),
+    media("(max-width: 640px)", [fontSize(em(1.))]),
     textTransform(`uppercase),
     selector(
       "&.active",
@@ -46,7 +48,7 @@ module S = {
       display(`flex),
       marginBottom(em(0.3)),
       flexDirection(`row),
-      flexWrap(`wrap),
+      flexWrap(`nowrap),
       justifyContent(`spaceEvenly),
       selector("& div a", menu_item_styles),
     ]);
@@ -55,26 +57,22 @@ module S = {
 [@react.component]
 let make = (~title) => {
   let activeClassName = "active";
-  <div>
-    <div className=S.header>
-      <div className=S.title_box>
-        <h1> {title |> text} </h1>
-        <div className=S.menu>
-          <div>
-            <Gatsby.Link _to="/" activeClassName>
-              {"Blog" |> text}
-            </Gatsby.Link>
-          </div>
-          <div>
-            <Gatsby.Link _to="/about/" activeClassName>
-              {"Research" |> text}
-            </Gatsby.Link>
-          </div>
-          <div>
-            <Gatsby.Link _to="/critics/" activeClassName>
-              {"Keyword-critics" |> text}
-            </Gatsby.Link>
-          </div>
+  <div className=S.header>
+    <div className=S.title_box>
+      <h1> {title |> text} </h1>
+      <div className=S.menu>
+        <div>
+          <Gatsby.Link _to="/" activeClassName> {"Blog" |> text} </Gatsby.Link>
+        </div>
+        <div>
+          <Gatsby.Link _to="/about/" activeClassName>
+            {"Research" |> text}
+          </Gatsby.Link>
+        </div>
+        <div>
+          <Gatsby.Link _to="/critics/" activeClassName>
+            {"Keyword-critics" |> text}
+          </Gatsby.Link>
         </div>
       </div>
     </div>

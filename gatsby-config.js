@@ -7,7 +7,21 @@
 module.exports = {
   siteMetadata: { title: `Title from siteMetadata`, },
   plugins: [
-    "gatsby-plugin-reasonml",
+    `gatsby-plugin-reasonml`,
+    // PWA
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Blog`,
+        short_name: `Blog`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `content/images/icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
     // FILES
     {
       resolve: `gatsby-source-filesystem`,
