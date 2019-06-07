@@ -1,0 +1,1 @@
+module Link = G_link;

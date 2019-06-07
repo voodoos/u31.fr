@@ -1,0 +1,27 @@
+{
+    "name": "blog",
+    "refmt": 3,
+    "reason": {
+        "react-jsx": 3
+    },
+    "package-specs": {
+        "module": "es6",
+        "in-source": true
+    },
+    "suffix": ".bs.js",
+    "sources": [
+        {
+            "dir": "src",
+            "subdirs": true
+        },
+        {
+            "dir": "plugins",
+            "subdirs": true
+        }
+    ],
+    "bs-dependencies": [
+        "reason-react",
+        "@moox/bs-react-helmet",
+        "bs-css"
+    ]
+}
