@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+const path = require(`path`)
 
 module.exports = {
   siteMetadata: { title: `Title from siteMetadata`, },
@@ -27,11 +28,20 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `articles`,
-        path: `${__dirname}/content/articles/`,
+        path: path.join(__dirname, `content`, `articles`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `origami`,
+        path: path.join(__dirname, `content`, `images`, `origami`),
       },
     },
     // IMAGES
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-image`,
     // MARKDOWN
     {
       resolve: `gatsby-transformer-remark`,

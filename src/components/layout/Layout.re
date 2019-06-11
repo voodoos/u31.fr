@@ -21,6 +21,7 @@ let make = (~children) => {
   let title = "The Naked Code";
   <div className=S.wrapper>
     <BsReactHelmet>
+      <html lang="en" />
       <title> {title |> text} </title>
       <meta name="description" content="Everything is awesome!" />
       <link
