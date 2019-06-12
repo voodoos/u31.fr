@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+require("prismjs/themes/prism-okaidia.css")
 const Layout = require('../components/layout/Layout.bs.js').make;
 const Posts = require('../components/blog/Posts.bs.js').make;
 

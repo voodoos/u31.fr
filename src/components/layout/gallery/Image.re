@@ -1,24 +1,89 @@
+open Helpers;
+
+let border_size = 4;
+let thumb_padding = 5;
+let thumb_size = 200 + 0 * thumb_padding;
+
 module S = {
   open Css;
-  let grid_item = style([]);
+  let grid_item = style([width(px(thumb_size)), height(px(thumb_size))]);
 
-  let thumbnail = active => {
-    style([display(active ? `none : `block)]);
+  let grid_item_wide = active => {
+    style([
+      display(active ? `block : `none),
+      position(`relative),
+      overflow(`hidden),
+      gridColumn(1, -1),
+      borderRadius(px(5)),
+    ]);
   };
 
-  let wide = active => {
-    style([display(active ? `block : `none)]);
-  };
+  let thumbnail =
+    style([
+      display(`block),
+      overflow(`hidden),
+      position(`relative),
+      top(px(- border_size)),
+      left(px(- border_size)),
+      width(pct(100.)),
+      height(pct(100.)),
+      border(px(border_size), `dashed, transparent),
+      borderRadius(px(8)),
+      onHover([borderColor(black)]),
+    ]);
+
+  let label =
+    style([
+      position(`absolute),
+      width(pct(100.)),
+      height(rem(2.)),
+      lineHeight(rem(2.)),
+      left(`zero),
+      bottom(`zero),
+      color(white),
+      backgroundColor(rgba(0, 0, 0, 0.5)),
+      selector(
+        "& span",
+        [
+          display(`inlineBlock),
+          width(pct(100.)),
+          textAlign(`center),
+          verticalAlign(`middle),
+          fontSize(rem(1.2)),
+        ],
+      ),
+    ]);
 };
 
 [@react.component]
-let make = (~photo) => {
-  let (active, set_active) = React.useState(() => false);
-  let onClick = _evt => set_active(a => a ? false : true);
-  <div className=S.grid_item onClick>
-    <div className={S.wide(active)}> <Gatsby.Img fluid=photo##fluid /> </div>
-    <div className={S.thumbnail(active)}>
-      <Gatsby.Img fixed=photo##fixed />
+let make = (~photo, ~active, ~onClick) => {
+  Js.log(photo);
+  let label = {
+    // todo: better bindings...
+    let name = Obj.magic(photo##fluid)##originalName;
+    Js.log(name);
+    let name =
+      switch (String.index(name, '_')) {
+      | idx => String.sub(name, idx + 1, String.length(name) - idx - 1)
+      | exception Not_found => name
+      };
+    switch (String.rindex(name, '.')) {
+    | idx => String.sub(name, 0, idx)
+    | exception Not_found => name
+    };
+  };
+  <React.Fragment>
+    <div className=S.grid_item onClick>
+      <a
+        className=S.thumbnail
+        href="test"
+        onClick={evt => ReactEvent.Mouse.preventDefault(evt)}>
+        <Gatsby.Img fixed=photo##fixed />
+      </a>
     </div>
-  </div>;
+    <div className={S.grid_item_wide(active)}>
+      <Gatsby.Img fluid=photo##fluid />
+      <div className=S.label> <span> {label |> text} </span> </div>
+    </div>
+  </React.Fragment>;
 };

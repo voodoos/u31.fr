@@ -66,12 +66,17 @@ let make = (~title) => {
         </div>
         <div>
           <Gatsby.Link _to="/about/" activeClassName>
-            {"Research" |> text}
+            {"About" |> text}
+          </Gatsby.Link>
+        </div>
+        <div>
+          <Gatsby.Link _to="/origallery/" activeClassName>
+            {"OriGallery" |> text}
           </Gatsby.Link>
         </div>
         <div>
           <Gatsby.Link _to="/critics/" activeClassName>
-            {"Keyword-critics" |> text}
+            {"K-Critics" |> text}
           </Gatsby.Link>
         </div>
       </div>
