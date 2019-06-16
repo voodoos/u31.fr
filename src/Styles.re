@@ -18,15 +18,16 @@ let make_global_style = () => {
       (),
     ),
   );
+  global("html", [fontSize(`calc((`add, em(0.5), vw(1.0))))]);
   global(
     "body",
     [
       backgroundColor(white),
       fontFamily(Theme.fontFamily),
-      fontSize(Theme.font_base_size),
+      //fontSize(Theme.font_base_size),
       selector("a", [color(currentColor), textDecoration(`none)]),
-      media(Theme.break(`mediumMobileOnly), [fontSize(px(15))]),
-      media(Theme.break(`smallMobileOnly), [fontSize(px(10))]),
+      // media(Theme.break(`mediumMobileOnly), [fontSize(px(15))]),
+      // media(Theme.break(`smallMobileOnly), [fontSize(px(10))]),
     ],
   );
   global("h1, h2, h3, h4, h5", [textAlign(`left)]);
