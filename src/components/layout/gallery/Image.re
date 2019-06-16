@@ -27,9 +27,10 @@ module S = {
       left(px(- border_size)),
       width(pct(100.)),
       height(pct(100.)),
-      border(px(border_size), `dashed, transparent),
+      border(px(2), `solid, black),
+      backgroundColor(white),
       borderRadius(px(8)),
-      onHover([borderColor(black)]),
+      onHover([border(px(2), `dashed, black)]),
     ]);
 
   let label =
@@ -77,13 +78,14 @@ let make = (~photo, ~active, ~onClick) => {
       <a
         className=S.thumbnail
         href="test"
+        target="_blank"
         onClick={evt => ReactEvent.Mouse.preventDefault(evt)}>
         <Gatsby.Img fixed=photo##fixed />
       </a>
     </div>
-    <div className={S.grid_item_wide(active)}>
+    <a className={S.grid_item_wide(active)} href="test" target="_blank">
       <Gatsby.Img fluid=photo##fluid />
       <div className=S.label> <span> {label |> text} </span> </div>
-    </div>
+    </a>
   </React.Fragment>;
 };

@@ -8,7 +8,7 @@ const PhotoGrid =
 
 export default ({ data }) => {
   return (
-    < Layout >
+    < Layout large={true}>
       <PhotoGrid photos={data.allFile.edges} />
     </Layout >
   )
@@ -16,7 +16,10 @@ export default ({ data }) => {
 
 export const query = graphql`
 query MyQuery {
-    allFile(filter: {sourceInstanceName: {eq: "origami"}}) {
+    allFile(
+      filter: {sourceInstanceName: {eq: "origami"}},
+      sort: {fields: name, order: DESC}
+    ) {
       edges {
         node {
           childImageSharp {
@@ -25,7 +28,7 @@ query MyQuery {
               originalImg
               originalName
             }
-            fixed(width: 200, height: 200){
+            fixed(width: 200, height: 200, cropFocus: ENTROPY){
               ...GatsbyImageSharpFixed_withWebp_tracedSVG
             }
           }

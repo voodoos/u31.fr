@@ -11,11 +11,7 @@ module S = {
       minWidth(px(370)),
       selector(
         "& h1",
-        [
-          fontSize(em(5.)),
-          margin(`zero),
-          media("(max-width: 640px)", [fontSize(em(3.))]),
-        ],
+        [fontSize(em(5.)), textAlign(`center), margin(`zero)],
       ),
     ]);
 
@@ -26,7 +22,7 @@ module S = {
     padding(px(10)),
     marginTop(em(0.5)),
     marginBottom(em(0.8)),
-    border(px(2), `solid, white),
+    border(px(2), `dotted, transparent),
     fontSize(em(1.5)),
     media("(max-width: 640px)", [fontSize(em(1.))]),
     textTransform(`uppercase),
@@ -39,6 +35,7 @@ module S = {
         color(white),
       ],
     ),
+    transition(~duration=100, "border-color"),
     selector("&:hover", [borderStyle(`dotted), borderColor(black)]),
   ];
 
