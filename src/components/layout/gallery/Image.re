@@ -6,7 +6,12 @@ let thumb_size = 200 + 0 * thumb_padding;
 
 module S = {
   open Css;
-  let grid_item = style([width(px(thumb_size)), height(px(thumb_size))]);
+  let grid_item =
+    style([
+      width(px(thumb_size)),
+      height(px(thumb_size)),
+      media(Theme.break(`simpleGallery), [important(display(`none))]),
+    ]);
 
   let grid_item_wide = active => {
     style([
@@ -15,6 +20,7 @@ module S = {
       overflow(`hidden),
       gridColumn(1, -1),
       borderRadius(px(5)),
+      media(Theme.break(`simpleGallery), [important(display(`block))]),
     ]);
   };
 

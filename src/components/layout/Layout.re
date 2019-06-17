@@ -2,25 +2,27 @@ open Helpers;
 
 module S = {
   open Css;
-  let wrapper = style([textAlign(`center)]);
+  let wrapper = style([]);
   let content =
     style([
-      display(`inlineBlock),
       boxSizing(`borderBox),
-      width(Theme.main_block_size),
-      padding(em(1.)),
+      marginLeft(`auto),
+      marginRight(`auto),
+      maxWidth(Theme.main_block_max_size),
+      width(pct(100.)),
       textAlign(`justify),
       media(Theme.break(`mobileOnly), [width(pct(90.))]),
     ]);
 
   let large_content =
-    merge([content, style([width(Theme.large_block_size)])]);
+    merge([content, style([maxWidth(Theme.large_block_max_size)])]);
 };
 
 Styles.make_global_style();
 
 [@react.component]
 let make = (~large=false, ~children) => {
+  Js.log(large);
   let title = "The Naked Blog";
   <div className=S.wrapper>
     <BsReactHelmet>
@@ -34,8 +36,9 @@ let make = (~large=false, ~children) => {
         crossorigin=true
       />*/
     <Header title />
-    <div className={if (large) {S.large_content} else {S.content}}>
+    <main className={if (large) {S.large_content} else {S.content}}>
       children
-    </div>
+    </main>
+    <footer />
   </div>;
 };

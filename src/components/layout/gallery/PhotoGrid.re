@@ -9,6 +9,14 @@ module S = {
       gridAutoFlow(`rowDense),
       gridGap(rem(1.)),
       justifyContent(`center),
+      media(
+        Theme.break(`simpleGallery),
+        [
+          important(
+            unsafe("grid-template-columns", "repeat(auto-fill, 100%)"),
+          ),
+        ],
+      ),
     ]);
 };
 

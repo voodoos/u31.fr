@@ -8,7 +8,6 @@ module S = {
       borderBottom(px(5), `dashed, black),
       paddingTop(em(1.)),
       textAlign(`center),
-      minWidth(px(370)),
       selector(
         "& h1",
         [fontSize(em(5.)), textAlign(`center), margin(`zero)],
@@ -47,36 +46,28 @@ module S = {
       flexDirection(`row),
       flexWrap(`nowrap),
       justifyContent(`spaceEvenly),
-      selector("& div a", menu_item_styles),
+      selector("& a", menu_item_styles),
     ]);
 };
 
 [@react.component]
 let make = (~title) => {
   let activeClassName = "active";
-  <div className=S.header>
+  <header className=S.header>
     <div className=S.title_box>
       <h1> {title |> text} </h1>
-      <div className=S.menu>
-        <div>
-          <Gatsby.Link _to="/" activeClassName> {"Blog" |> text} </Gatsby.Link>
-        </div>
-        <div>
-          <Gatsby.Link _to="/about/" activeClassName>
-            {"About" |> text}
-          </Gatsby.Link>
-        </div>
-        <div>
-          <Gatsby.Link _to="/origallery/" activeClassName>
-            {"OriGallery" |> text}
-          </Gatsby.Link>
-        </div>
-        <div>
-          <Gatsby.Link _to="/critics/" activeClassName>
-            {"K-Critics" |> text}
-          </Gatsby.Link>
-        </div>
-      </div>
+      <nav className=S.menu>
+        <Gatsby.Link _to="/" activeClassName> {"Blog" |> text} </Gatsby.Link>
+        <Gatsby.Link _to="/about/" activeClassName>
+          {"About" |> text}
+        </Gatsby.Link>
+        <Gatsby.Link _to="/origallery/" activeClassName>
+          {"OriGallery" |> text}
+        </Gatsby.Link>
+        <Gatsby.Link _to="/critics/" activeClassName>
+          {"K-Critics" |> text}
+        </Gatsby.Link>
+      </nav>
     </div>
-  </div>;
+  </header>;
 };
