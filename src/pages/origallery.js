@@ -8,7 +8,7 @@ const PhotoGrid =
 
 export default ({ data }) => {
   return (
-    <Layout large={true}>
+    <Layout large={true} page_description="Some hastily taken and carelessly cropped photographs of tortured squares of paper">
       <PhotoGrid photos={data.allFile.edges} />
     </Layout >
   )
