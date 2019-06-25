@@ -6,7 +6,9 @@ const Posts = require('../components/blog/Posts.bs.js').make;
 
 export default ({ data }) => {
   console.log(data);
-  return <Layout> <Posts articles={data.articles.edges} /> </Layout>
+  return <Layout>
+    <Posts articles={data.articles.edges} />
+  </Layout>
 };
 
 export const query = graphql`

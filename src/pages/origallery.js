@@ -23,6 +23,7 @@ query MyQuery {
       edges {
         node {
           childImageSharp {
+            id
             fluid(maxWidth: 1900, fit: COVER){
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
               originalImg

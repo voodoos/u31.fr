@@ -76,5 +76,13 @@ module.exports = {
         ],
       },
     },
+    // FOR STATIC CSS GEN
+    // todo: does not work...
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      },
+    },
   ],
 }

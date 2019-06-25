@@ -13,11 +13,14 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.12",
     "@moox/bs-react-helmet": "^2.0.0",
-    "bs-css": "^8.0.4",
+    "bs-css": "https://github.com/SentiaAnalytics/bs-css.git#230e1e7",
     "bs-platform": "^5.0.4",
     "gatsby": "^2.8.4",
     "gatsby-image": "^2.1.2",
+    "gatsby-plugin-emotion": "^4.1.0",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-reasonml": "file:./plugins/gatsby-plugin-reasonml",
