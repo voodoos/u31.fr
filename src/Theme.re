@@ -14,9 +14,9 @@ let font_grow_factor = vw(1.0);
 let font_scale = 1.20;
 let font_size_rem = (~level) => em(font_scale ** level);
 let make_global_scale = () =>
-  List.iter(
+  List.map(
     i =>
-      Css.global(
+      selector(
         "h" ++ string_of_int(i),
         [fontSize(font_size_rem(~level=float_of_int(6 - i)))],
       ),

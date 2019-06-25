@@ -19,6 +19,8 @@ and rulesToJson = rules =>
 
 type class_name = string;
 
+type style = list(Css.rule);
+
 type emo = {
   .
   [@bs.meth] "css": array(Js.Json.t) => string,

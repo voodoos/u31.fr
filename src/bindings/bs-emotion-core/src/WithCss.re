@@ -1,11 +1,10 @@
-// A Helper to use Emotion in the ClassName style
+// A Helper to use Emotion in the ClassNames style
 // Only support the css function
 open EClassNames;
 
-type style = list(Css.rule);
-
 [@react.component]
-let make = (~children: (list(style) => class_name) => React.element) => {
+let make =
+    (~children: (list(EClassNames.style) => class_name) => React.element) => {
   <EClassNames>
     {emo => {
        let f = rules => {

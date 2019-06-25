@@ -17,7 +17,7 @@ module S = {
   let large_content = [content, [maxWidth(Theme.large_block_max_size)]];
 };
 
-Styles.make_global_style();
+//Styles.make_global_style();
 
 [@react.component]
 let make = (~large=false, ~page_description=?, ~children) => {
@@ -30,6 +30,7 @@ let make = (~large=false, ~page_description=?, ~children) => {
            <title> {title |> text} </title>
            <meta name="description" content="Everything is awesome!" />
          </BsReactHelmet>
+         <GlobalCss styles={Styles.get_global_style()} />
          /*<link
              href="https://fonts.googleapis.com/css?family=Quattrocento&display=swap"
              rel="stylesheet"

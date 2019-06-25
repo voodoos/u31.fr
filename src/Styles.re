@@ -1,7 +1,7 @@
 open Css;
 
 // Global style is called in App.js
-let make_global_style = () => {
+let get_global_style = () => {
   ignore(
     fontFace(
       ~fontFamily="Quattrocento",
@@ -18,17 +18,23 @@ let make_global_style = () => {
       (),
     ),
   );
-  global("html", []);
-  global(
-    "body",
+  List.rev_append(
+    Theme.make_global_scale(),
     [
-      backgroundColor(white),
-      fontFamily(Theme.fontFamily),
-      selector("a", [color(currentColor), textDecoration(`none)]),
-      fontSize(`calc((`add, Theme.font_base_size, Theme.font_grow_factor))),
+      selector("html", []),
+      selector(
+        "body",
+        [
+          backgroundColor(white),
+          fontFamily(Theme.fontFamily),
+          selector("a", [color(currentColor), textDecoration(`none)]),
+          fontSize(
+            `calc((`add, Theme.font_base_size, Theme.font_grow_factor)),
+          ),
+        ],
+      ),
+      selector("h1, h2, h3, h4, h5", [textAlign(`left)]),
+      selector(".gatsby-highlight", [fontSize(em(0.8))]),
     ],
   );
-  global("h1, h2, h3, h4, h5", [textAlign(`left)]);
-  Theme.make_global_scale();
-  global(".gatsby-highlight", [fontSize(em(0.8))]);
 };
