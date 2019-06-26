@@ -1,21 +1,21 @@
 <section>
 
 ## Who ?
-My name is Ulysse Gérard and I am a (soon former) PhD student in computer
+I am a (soon former) PhD student in computer
 science. My main research topics involve logic, proof-search, functional
-programming and language design.
+programming and language design. bla bla
 </section>
 <section>
 
-## Why is this blog Naked ? And empty ?
+## Why is this blog Naked ?
 *The Naked Lunch* is a science-fiction surrealist novel written by William S.
 Burroughs. It was adapted by David Cronenberg in 1991.
 
-Not only a "code blog", I would like to share my perception of cinema via a
-series of short movie critics and other non-computer-related works such as paper
-folding.
+This is not only a "code blog", I would like it to be a personal place where I
+share programming tips along with others projects and discoveries. I will also
+try to transmit my perception of cinema via a series of short movie critics.
 
-It is new, and it is empty.
+Also, it is naked because it is empty, hopefully it won't last!
 </section>
 <section>
 

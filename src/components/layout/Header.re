@@ -5,12 +5,17 @@ module S = {
 
   let header = [
     borderBottom(px(5), `dashed, black),
+    width(pct(100.)),
     paddingTop(em(1.)),
     textAlign(`center),
     selector("a", [textDecoration(`none)]),
     selector(
       "& h1",
       [fontSize(em(5.)), textAlign(`center), margin(`zero)],
+    ),
+    selector(
+      "&.fixed",
+      [position(`fixed), selector("& h1", [display(`inlineBlock)])],
     ),
   ];
 
