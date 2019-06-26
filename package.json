@@ -25,6 +25,7 @@
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-reasonml": "file:./plugins/gatsby-plugin-reasonml",
     "gatsby-plugin-sharp": "^2.1.3",
+    "gatsby-remark-copy-linked-files": "^2.1.0",
     "gatsby-remark-images": "^3.0.14",
     "gatsby-remark-prismjs": "^3.2.11",
     "gatsby-source-filesystem": "^2.0.38",

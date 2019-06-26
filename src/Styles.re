@@ -27,10 +27,19 @@ let get_global_style = () => {
         [
           backgroundColor(white),
           fontFamily(Theme.fontFamily),
-          selector("a", [color(currentColor), textDecoration(`none)]),
           fontSize(
             `calc((`add, Theme.font_base_size, Theme.font_grow_factor)),
           ),
+        ],
+      ),
+      selector(
+        "a",
+        [
+          color(currentColor),
+          textDecoration(`underline),
+          textDecorationStyle(`dotted),
+          textDecorationColor(hex("4a4a4a")),
+          selector("&:hover", [textDecorationStyle(`solid)]),
         ],
       ),
       selector("h1, h2, h3, h4, h5", [textAlign(`left)]),

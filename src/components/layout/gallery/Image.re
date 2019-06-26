@@ -60,12 +60,11 @@ module S = {
 };
 
 [@react.component]
-let make = (~photo, ~active, ~onClick) => {
-  Js.log(photo);
+let make = (~nphoto, ~active, ~onClick) => {
+  let photo = nphoto##childImageSharp;
   let label = {
     // todo: better bindings...
     let name = Obj.magic(photo##fluid)##originalName;
-    Js.log(name);
     let name =
       switch (String.index(name, '_')) {
       | idx => String.sub(name, idx + 1, String.length(name) - idx - 1)
@@ -87,7 +86,7 @@ let make = (~photo, ~active, ~onClick) => {
          </div>
          <a
            className={css([S.grid_item_wide(active)])}
-           href="test"
+           //href=nphoto##publicURL
            target="_blank">
            <Gatsby.Img fluid=photo##fluid />
            <div className={css([S.label])}>

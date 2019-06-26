@@ -33,6 +33,7 @@ query MyQuery {
               ...GatsbyImageSharpFixed_withWebp_tracedSVG
             }
           }
+          publicURL
         }
       }
     }

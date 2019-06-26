@@ -27,6 +27,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `pages`,
+        path: path.join(__dirname, `content`, `pages`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `articles`,
         path: path.join(__dirname, `content`, `articles`),
       },
@@ -72,6 +79,12 @@ module.exports = {
               inlineCodeMarker: null,
               showLineNumbers: false,
             },
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: 'files',
+            }
           },
         ],
       },

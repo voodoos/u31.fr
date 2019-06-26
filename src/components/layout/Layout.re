@@ -11,6 +11,7 @@ module S = {
     maxWidth(Theme.main_block_max_size),
     width(pct(100.)),
     textAlign(`justify),
+    unsafe("textJustify", "inter-character"),
     media(Theme.break(`mobileOnly), [width(pct(90.))]),
   ];
 

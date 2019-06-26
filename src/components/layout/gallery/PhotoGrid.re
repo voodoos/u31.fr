@@ -4,15 +4,13 @@ module S = {
   let grid = [
     display(`grid),
     width(pct(100.)),
-    unsafe("grid-template-columns", "repeat(auto-fill, 200px)"),
+    unsafe("gridTemplateColumns", "repeat(auto-fill, 200px)"),
     gridAutoFlow(`rowDense),
     gridGap(rem(1.)),
     justifyContent(`center),
     media(
       Theme.break(`simpleGallery),
-      [
-        important(unsafe("grid-template-columns", "repeat(auto-fill, 100%)")),
-      ],
+      [important(unsafe("gridTemplateColumns", "repeat(auto-fill, 100%)"))],
     ),
   ];
 };
@@ -35,10 +33,10 @@ let make = (~photos) => {
            {Array.map(
               photo => {
                 let key = next_key();
-                let photo = photo##node##childImageSharp;
+                let nphoto = photo##node;
                 let active = key == active;
                 let onClick = onClick(key);
-                <Image photo active onClick key={string_of_int(key)} />;
+                <Image nphoto active onClick key={string_of_int(key)} />;
               },
               photos,
             )

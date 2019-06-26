@@ -7,6 +7,7 @@ module S = {
     borderBottom(px(5), `dashed, black),
     paddingTop(em(1.)),
     textAlign(`center),
+    selector("a", [textDecoration(`none)]),
     selector(
       "& h1",
       [fontSize(em(5.)), textAlign(`center), margin(`zero)],
@@ -18,11 +19,11 @@ module S = {
   let menu_item_styles = [
     display(`inlineBlock),
     padding(px(10)),
+    paddingTop(px(12)),
     marginTop(em(0.5)),
     marginBottom(em(0.8)),
     border(px(2), `dotted, transparent),
     fontSize(em(1.5)),
-    media("(max-width: 640px)", [fontSize(em(1.))]),
     textTransform(`uppercase),
     selector(
       "&.active",
