@@ -22,6 +22,7 @@
     "bs-dependencies": [
         "reason-react",
         "@moox/bs-react-helmet",
-        "bs-css"
+        "bs-css",
+        "bs-webapi"
     ]
 }

@@ -24,7 +24,7 @@ type style = list(Css.rule);
 type emo = {
   .
   [@bs.meth] "css": array(Js.Json.t) => string,
-  "cx": string, // todo
+  [@bs.meth] "cx": array(string) => string, // todo
   "theme": string // todo
 };
 

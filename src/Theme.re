@@ -38,6 +38,13 @@ let break = point =>
   | `simpleGallery => "(max-width: 480px)"
   };
 
+let menu_item_sep = em(1.);
+
+//////////////////
+///// COLORS /////
+//////////////////
+let bg_color = white;
+
 //////////////////
 ///// GLOBAL /////
 //////////////////

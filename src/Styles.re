@@ -25,7 +25,7 @@ let get_global_style = () => {
       selector(
         "body",
         [
-          backgroundColor(white),
+          backgroundColor(Theme.bg_color),
           fontFamily(Theme.fontFamily),
           fontSize(
             `calc((`add, Theme.font_base_size, Theme.font_grow_factor)),
