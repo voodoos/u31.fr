@@ -18,10 +18,9 @@ module S = {
   let large_content = [content, [maxWidth(Theme.large_block_max_size)]];
 };
 
-//Styles.make_global_style();
-
 [@react.component]
-let make = (~large=false, ~page_description=?, ~children) => {
+let make =
+    (~large=false, ~page_description=?, ~showLangSwitch=false, ~children) => {
   let title = "The Naked Blog";
   <WithCss>
     {css =>
@@ -37,7 +36,7 @@ let make = (~large=false, ~page_description=?, ~children) => {
              rel="stylesheet"
              crossorigin=true
            />*/
-         <Header title ?page_description />
+         <Header title ?page_description showLangSwitch />
          <main
            className={css(
              if (large) {

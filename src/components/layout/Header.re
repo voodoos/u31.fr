@@ -97,7 +97,7 @@ module S = {
 };
 
 [@react.component]
-let make = (~title, ~page_description=?) => {
+let make = (~title, ~page_description=?, ~showLangSwitch=false) => {
   let (fixed, set_fixed) = React.useState(() => false);
   let activeClassName = "active";
   React.useEffect(() => {
@@ -121,33 +121,61 @@ let make = (~title, ~page_description=?) => {
   <React.Fragment>
     <WithCss>
       {css =>
-         <header
-           className={css(~classNames=[fixed ? "fixed" : ""], [S.header])}>
-           <div className={css([S.title_box])}>
-             <h1> {title |> text} </h1>
-             <nav className={css([S.menu])}>
-               <Gatsby.Link _to="/" activeClassName>
-                 {"Blog" |> text}
-               </Gatsby.Link>
-               <Gatsby.Link _to="/about/" activeClassName>
-                 {"About" |> text}
-               </Gatsby.Link>
-               <Gatsby.Link _to="/origallery/" activeClassName>
-                 {"OriGallery" |> text}
-               </Gatsby.Link>
-             </nav>
-           </div>
-           /* <Gatsby.Link _to="/critics/" activeClassName>
-                {"K-Critics" |> text}
-              </Gatsby.Link>*/
-           {switch (page_description) {
-            | Some(des) =>
-              <React.Fragment>
-                <h4 className={css([S.page_description])}> {des |> text} </h4>
-              </React.Fragment>
-            | None => React.null
+         <React.Fragment>
+           <header
+             className={css(~classNames=[fixed ? "fixed" : ""], [S.header])}>
+             <div className={css([S.title_box])}>
+               <h1> {title |> text} </h1>
+               <nav className={css([S.menu])}>
+                 <Gatsby.Link _to="/" activeClassName>
+                   {"Blog" |> text}
+                 </Gatsby.Link>
+                 <Gatsby.Link _to="/en/about/" activeClassName>
+                   {"About" |> text}
+                 </Gatsby.Link>
+                 <Gatsby.Link _to="/origallery/" activeClassName>
+                   {"OriGallery" |> text}
+                 </Gatsby.Link>
+               </nav>
+             </div>
+             /* <Gatsby.Link _to="/critics/" activeClassName>
+                  {"K-Critics" |> text}
+                </Gatsby.Link>*/
+             {switch (page_description) {
+              | Some(des) =>
+                <React.Fragment>
+                  <h4 className={css([S.page_description])}>
+                    {des |> text}
+                  </h4>
+                </React.Fragment>
+              | None => React.null
+              }}
+           </header>
+           {if (showLangSwitch) {
+              let className =
+                Css.(
+                  css([
+                    [
+                      position(`absolute),
+                      left(pct(75.)),
+                      padding(em(0.3)),
+                      paddingTop(em(0.2)),
+                      paddingBottom(em(0.2)),
+                      border(px(3), `dotted, black),
+                      borderTopStyle(`none),
+                      fontSize(em(0.8)),
+                      selector(
+                        "&:hover",
+                        [borderStyle(`solid), borderTopStyle(`none)],
+                      ),
+                    ],
+                  ])
+                );
+              <span className> {"en" |> text} </span>;
+            } else {
+              React.null;
             }}
-         </header>}
+         </React.Fragment>}
     </WithCss>
   </React.Fragment>;
 };

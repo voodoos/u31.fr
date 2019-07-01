@@ -1,6 +1,6 @@
 <section>
 
-## Who ?
+## Qui ?
 I am a (soon former) PhD student in computer
 science. My main research topics involve logic, proof-search, functional
 programming and language design. bla bla

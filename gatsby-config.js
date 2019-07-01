@@ -89,6 +89,14 @@ module.exports = {
         ],
       },
     },
+    // INTERNATIONALIZATION
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en',
+        useLangKeyLayout: false
+      }
+    },
     // FOR STATIC CSS GEN
     // todo: does not work...
     {
