@@ -1,0 +1,17 @@
+[
+    {
+        "id": "menu.blog",
+        "defaultMessage": "Blog",
+        "message": ""
+    },
+    {
+        "id": "menu.about",
+        "defaultMessage": "À Propos",
+        "message": ""
+    },
+    {
+        "id": "menu.gallery",
+        "defaultMessage": "Origallerie",
+        "message": ""
+    }
+]

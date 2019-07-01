@@ -23,6 +23,7 @@
         "reason-react",
         "@moox/bs-react-helmet",
         "bs-css",
+        "bs-react-intl",
         "bs-webapi"
     ]
 }

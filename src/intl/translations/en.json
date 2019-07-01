@@ -1,0 +1,17 @@
+[
+    {
+        "id": "menu.blog",
+        "defaultMessage": "Blog",
+        "message": ""
+    },
+    {
+        "id": "menu.about",
+        "defaultMessage": "About",
+        "message": ""
+    },
+    {
+        "id": "menu.gallery",
+        "defaultMessage": "Origallery",
+        "message": ""
+    }
+]

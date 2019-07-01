@@ -103,7 +103,7 @@ let make = (~title, ~page_description=?, ~showLangSwitch=false) => {
   React.useEffect(() => {
     // We need to watch scroll to fix the header
     let target = Webapi.Dom.Document.asEventTarget(Webapi.Dom.document);
-    let scroll_handler = e => {
+    let scroll_handler = _e => {
       let win = Helpers.get_win();
       let yo = win |> Webapi.Dom.Window.pageYOffset;
 
@@ -128,13 +128,22 @@ let make = (~title, ~page_description=?, ~showLangSwitch=false) => {
                <h1> {title |> text} </h1>
                <nav className={css([S.menu])}>
                  <Gatsby.Link _to="/" activeClassName>
-                   {"Blog" |> text}
+                   <ReactIntl.FormattedMessage
+                     id="menu.blog"
+                     defaultMessage="Blog"
+                   />
                  </Gatsby.Link>
                  <Gatsby.Link _to="/en/about/" activeClassName>
-                   {"About" |> text}
+                   <ReactIntl.FormattedMessage
+                     id="menu.about"
+                     defaultMessage="About"
+                   />
                  </Gatsby.Link>
                  <Gatsby.Link _to="/origallery/" activeClassName>
-                   {"OriGallery" |> text}
+                   <ReactIntl.FormattedMessage
+                     id="menu.gallery"
+                     defaultMessage="Origallery"
+                   />
                  </Gatsby.Link>
                </nav>
              </div>

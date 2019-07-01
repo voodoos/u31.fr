@@ -20,34 +20,47 @@ module S = {
 
 [@react.component]
 let make =
-    (~large=false, ~page_description=?, ~showLangSwitch=false, ~children) => {
+    (
+      ~large=false,
+      ~page_description=?,
+      ~lang="en",
+      ~showLangSwitch=false,
+      ~children,
+    ) => {
   let title = "The Naked Blog";
-  <WithCss>
-    {css =>
-       <div className={css([S.wrapper])}>
-         <BsReactHelmet>
-           <html lang="en" />
-           <title> {title |> text} </title>
-           <meta name="description" content="Everything is awesome!" />
-         </BsReactHelmet>
-         <GlobalCss styles={Styles.get_global_style()} />
-         /*<link
-             href="https://fonts.googleapis.com/css?family=Quattrocento&display=swap"
-             rel="stylesheet"
-             crossorigin=true
-           />*/
-         <Header title ?page_description showLangSwitch />
-         <main
-           className={css(
-             if (large) {
-               S.large_content;
-             } else {
-               [S.content];
-             },
-           )}>
-           children
-         </main>
-         <footer />
-       </div>}
-  </WithCss>;
+  let locale = Locale.fromString(lang);
+  <ReactIntl.IntlProvider
+    locale={locale->Locale.toString}
+    messages={locale->Locale.translations->Locale.translationsToDict}>
+    <React.Fragment>
+      <BsReactHelmet>
+        <html lang />
+        <title> {title |> text} </title>
+        <meta name="description" content="Everything is awesome!" />
+      </BsReactHelmet>
+      <WithCss>
+        {css =>
+           <div className={css([S.wrapper])}>
+             <GlobalCss styles={Styles.get_global_style()} />
+             /*<link
+                 href="https://fonts.googleapis.com/css?family=Quattrocento&display=swap"
+                 rel="stylesheet"
+                 crossorigin=true
+               />*/
+             <Header title ?page_description showLangSwitch />
+             <main
+               className={css(
+                 if (large) {
+                   S.large_content;
+                 } else {
+                   [S.content];
+                 },
+               )}>
+               children
+             </main>
+             <footer />
+           </div>}
+      </WithCss>
+    </React.Fragment>
+  </ReactIntl.IntlProvider>;
 };
