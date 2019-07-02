@@ -6,16 +6,19 @@ const PhotoGrid =
   require('../components/layout/gallery/PhotoGrid.bs.js').make;
 
 
-export default ({ data }) => {
+export default ({ data, location }) => {
   return (
-    <Layout large={true} page_description="Some hastily taken and carelessly cropped photographs of tortured squares of paper">
+    <Layout
+      large={true}
+      pathname={location.pathname}
+      page_description="Some hastily taken and carelessly cropped photographs of tortured squares of paper">
       <PhotoGrid photos={data.allFile.edges} />
     </Layout >
   )
 }
 
 export const query = graphql`
-query MyQuery {
+query {
     allFile(
       filter: {sourceInstanceName: {eq: "origami"}},
       sort: {fields: name, order: DESC}

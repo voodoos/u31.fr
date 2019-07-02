@@ -20,6 +20,8 @@ let translationsToDict = (translations: array(ReactIntl.translation)) => {
   );
 };
 
+let get = intl => ReactIntl.Intl.locale(intl);
+
 type locale =
   | En
   | Fr;
@@ -35,6 +37,8 @@ let fromString =
   fun
   | "fr" => Fr
   | _ => En;
+
+let pref = (intl, url) => "/" ++ get(intl) ++ url;
 
 let translations =
   fun

@@ -23,10 +23,12 @@ let make =
     (
       ~large=false,
       ~page_description=?,
+      ~pathname,
       ~lang="en",
       ~showLangSwitch=false,
       ~children,
     ) => {
+  Js.log(pathname);
   let title = "The Naked Blog";
   let locale = Locale.fromString(lang);
   <ReactIntl.IntlProvider

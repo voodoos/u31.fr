@@ -118,6 +118,8 @@ let make = (~title, ~page_description=?, ~showLangSwitch=false) => {
     //Helpers.new_event_listener("scroll", scroll_handler, target);
     None; // Deactivating small nav. Need some thinking. nice but useless ?
   });
+  let intl = ReactIntl.useIntl();
+  let pref = Locale.pref(intl);
   <React.Fragment>
     <WithCss>
       {css =>
@@ -127,19 +129,19 @@ let make = (~title, ~page_description=?, ~showLangSwitch=false) => {
              <div className={css([S.title_box])}>
                <h1> {title |> text} </h1>
                <nav className={css([S.menu])}>
-                 <Gatsby.Link _to="/" activeClassName>
+                 <Gatsby.Link _to={pref("/")} activeClassName>
                    <ReactIntl.FormattedMessage
                      id="menu.blog"
                      defaultMessage="Blog"
                    />
                  </Gatsby.Link>
-                 <Gatsby.Link _to="/en/about/" activeClassName>
+                 <Gatsby.Link _to={pref("/about/")} activeClassName>
                    <ReactIntl.FormattedMessage
                      id="menu.about"
                      defaultMessage="About"
                    />
                  </Gatsby.Link>
-                 <Gatsby.Link _to="/origallery/" activeClassName>
+                 <Gatsby.Link _to={pref("/origallery/")} activeClassName>
                    <ReactIntl.FormattedMessage
                      id="menu.gallery"
                      defaultMessage="Origallery"
