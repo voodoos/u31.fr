@@ -5,7 +5,6 @@ const Layout = require('../components/layout/Layout.bs.js').make;
 const Posts = require('../components/blog/Posts.bs.js').make;
 
 export default ({ data, location }) => {
-  console.log(location);
   return <Layout pathname={location.pathname}>
     <Posts articles={data.articles.edges} />
   </Layout>

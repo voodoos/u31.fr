@@ -33,12 +33,17 @@ let toString =
   | En => "en"
   | Fr => "fr";
 
+let toPath =
+  fun
+  | En => ""
+  | Fr => "/fr";
+
 let fromString =
   fun
   | "fr" => Fr
   | _ => En;
 
-let pref = (intl, url) => "/" ++ get(intl) ++ url;
+let pref = (intl, url) => intl->get->fromString->toPath ++ url;
 
 let translations =
   fun

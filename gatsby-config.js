@@ -94,7 +94,8 @@ module.exports = {
       resolve: 'gatsby-plugin-i18n',
       options: {
         langKeyDefault: 'en',
-        useLangKeyLayout: false
+        useLangKeyLayout: false,
+        prefixDefault: false,
       }
     },
     // FOR STATIC CSS GEN

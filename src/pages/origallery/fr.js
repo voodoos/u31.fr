@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 const Layout =
-  require('../components/layout/Layout.bs.js').make;
+  require('../../components/layout/Layout.bs.js').make;
 const PhotoGrid =
-  require('../components/layout/gallery/PhotoGrid.bs.js').make;
+  require('../../components/layout/gallery/PhotoGrid.bs.js').make;
 
 
 export default ({ data, location }) => {
