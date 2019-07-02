@@ -97,7 +97,7 @@ module S = {
 };
 
 [@react.component]
-let make = (~title, ~page_description=?, ~showLangSwitch=false) => {
+let make = (~title, ~page_description=?, ~pathname, ~showLangSwitch=true) => {
   let (fixed, set_fixed) = React.useState(() => false);
   let activeClassName = "active";
   React.useEffect(() => {
@@ -175,14 +175,21 @@ let make = (~title, ~page_description=?, ~showLangSwitch=false) => {
                       border(px(3), `dotted, black),
                       borderTopStyle(`none),
                       fontSize(em(0.8)),
+                      textAlign(`center),
+                      width(em(1.2)),
                       selector(
                         "&:hover",
                         [borderStyle(`solid), borderTopStyle(`none)],
                       ),
+                      selector("& a", [textDecoration(`none)]),
                     ],
                   ])
                 );
-              <span className> {"en" |> text} </span>;
+              Locale.(
+                <Gatsby.Link _to={switch_lang(pathname)}>
+                  <span className> {intl->get_other->toString |> text} </span>
+                </Gatsby.Link>
+              );
             } else {
               React.null;
             }}

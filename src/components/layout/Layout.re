@@ -25,7 +25,7 @@ let make =
       ~page_description=?,
       ~pathname,
       ~lang="en",
-      ~showLangSwitch=false,
+      ~showLangSwitch=true,
       ~children,
     ) => {
   Js.log(pathname);
@@ -49,7 +49,7 @@ let make =
                  rel="stylesheet"
                  crossorigin=true
                />*/
-             <Header title ?page_description showLangSwitch />
+             <Header title ?page_description showLangSwitch pathname />
              <main
                className={css(
                  if (large) {

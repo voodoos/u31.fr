@@ -54,3 +54,17 @@ let other =
   fun
   | En => Fr
   | Fr => En;
+
+let get_other = intl => other @@ fromString @@ get @@ intl;
+
+let switch_lang =
+  fun
+  | "/" => "/fr/"
+  | path => {
+      String.(
+        switch (path->sub(1, 2)) {
+        | "fr" => path->sub(3, path->length - 3)
+        | _ => "/fr" ++ path
+        }
+      );
+    };

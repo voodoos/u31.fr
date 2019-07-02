@@ -44,33 +44,3 @@ query {
   }
 }
 `
-
-
-
-/*
-let default = props => {
-  Js.log(props);
-  <Layout> <Posts articles={props##data##allFile##edges} /> </Layout>;
-};
-
-// todo: bindings ? graphql ppx ?
-%raw
-{|export const query = graphql`
-query {
-  allFile(filter: {sourceInstanceName: {eq: "articles"}, extension: {eq: "md"}}) {
-    edges {
-      node {
-        childMarkdownRemark {
-          html
-          frontmatter {
-            date
-            title
-          }
-          timeToRead
-          id
-        }
-      }
-    }
-  }
-}
-`|};*/
