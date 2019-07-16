@@ -1,7 +1,7 @@
-[@bs.module "./translations/en.json"]
-external en: array(ReactIntl.translation) = "default";
 [@bs.module "./translations/fr.json"]
 external fr: array(ReactIntl.translation) = "default";
+[@bs.module "./translations/en.json"]
+external en: array(ReactIntl.translation) = "default";
 
 let translationsToDict = (translations: array(ReactIntl.translation)) => {
   translations->Belt.Array.reduce(
@@ -20,13 +20,11 @@ let translationsToDict = (translations: array(ReactIntl.translation)) => {
   );
 };
 
-let get = intl => ReactIntl.Intl.locale(intl);
-
 type locale =
   | En
   | Fr;
 
-let all = [|En, Fr|];
+//let all = [|En, Fr|];
 
 let toString =
   fun
@@ -38,13 +36,6 @@ let toPath =
   | En => ""
   | Fr => "/fr";
 
-let fromString =
-  fun
-  | "fr" => Fr
-  | _ => En;
-
-let pref = (intl, url) => intl->get->fromString->toPath ++ url;
-
 let translations =
   fun
   | En => en
@@ -55,8 +46,20 @@ let other =
   | En => Fr
   | Fr => En;
 
+let fromString =
+  fun
+  | "fr" => Fr
+  | _ => En;
+
+// Intl specific code
+let get = ReactIntl.Intl.locale;
+
+// Add locale to url
+let pref = (intl, url) => intl->get->fromString->toPath ++ url;
+
 let get_other = intl => other @@ fromString @@ get @@ intl;
 
+// Get Switched URL
 let switch_lang =
   fun
   | "/" => "/fr/"

@@ -11,7 +11,11 @@ export default ({ data, location }) => {
     <Layout
       large={true}
       pathname={location.pathname}
-      page_description="Some hastily taken and carelessly cropped photographs of tortured squares of paper">
+      lang='fr'
+      page_description="Une collection de feuilles de papier carrées impitoyablement torturées"
+    //"Quelques photos prises et détourées à la va-vite  de feuilles de papier
+    //carrées sauvagement torturées."
+    >
       <PhotoGrid photos={data.allFile.edges} />
     </Layout >
   )

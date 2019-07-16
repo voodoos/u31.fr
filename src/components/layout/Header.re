@@ -15,6 +15,7 @@ module S = {
     width(pct(100.)),
     paddingTop(em(1.)),
     textAlign(`center),
+    zIndex(100),
     selector("a", [textDecoration(`none)]),
     selector(
       "&.fixed",
@@ -22,7 +23,8 @@ module S = {
         position(`sticky),
         top(`zero),
         left(`zero),
-        paddingTop(em(0.3)),
+        paddingTop(`zero),
+        fontSize(em(0.7)),
         backgroundColor(Theme.bg_color),
         animation(~duration=500, fixed_header_anim),
       ],
@@ -82,6 +84,7 @@ module S = {
     flexWrap(`wrap),
     justifyContent(`spaceEvenly),
     selector("& a", menu_item_styles),
+    selector(".fixed &", [marginTop(`zero), marginBottom(`zero)]),
   ];
 
   let page_description = [
@@ -89,7 +92,7 @@ module S = {
     paddingTop(rem(2.)),
     paddingBottom(rem(2.)),
     textAlign(`center),
-    borderTop(px(5), `dashed, black),
+    borderBottom(px(5), `dashed, black),
   ];
 
   let sharp = [display(`inlineBlock)];
@@ -107,7 +110,7 @@ let make = (~title, ~page_description=?, ~pathname, ~showLangSwitch=true) => {
       let win = Helpers.get_win();
       let yo = win |> Webapi.Dom.Window.pageYOffset;
 
-      if (!fixed && yo > 400.) {
+      if (!fixed && yo > 800.) {
         set_fixed(_ => true);
       };
 
@@ -115,8 +118,8 @@ let make = (~title, ~page_description=?, ~pathname, ~showLangSwitch=true) => {
         set_fixed(_ => false);
       };
     };
-    //Helpers.new_event_listener("scroll", scroll_handler, target);
-    None; // Deactivating small nav. Need some thinking. nice but useless ?
+    Helpers.new_event_listener("scroll", scroll_handler, target);
+    //None; // Deactivating small nav. Need some thinking. nice but useless ?
   });
   let intl = ReactIntl.useIntl();
   let pref = Locale.pref(intl);
@@ -138,7 +141,7 @@ let make = (~title, ~page_description=?, ~pathname, ~showLangSwitch=true) => {
                  <Gatsby.Link _to={pref("/about/")} activeClassName>
                    <ReactIntl.FormattedMessage
                      id="menu.about"
-                     defaultMessage="About"
+                     defaultMessage="AboutDef"
                    />
                  </Gatsby.Link>
                  <Gatsby.Link _to={pref("/origallery/")} activeClassName>
@@ -149,19 +152,10 @@ let make = (~title, ~page_description=?, ~pathname, ~showLangSwitch=true) => {
                  </Gatsby.Link>
                </nav>
              </div>
-             /* <Gatsby.Link _to="/critics/" activeClassName>
-                  {"K-Critics" |> text}
-                </Gatsby.Link>*/
-             {switch (page_description) {
-              | Some(des) =>
-                <React.Fragment>
-                  <h4 className={css([S.page_description])}>
-                    {des |> text}
-                  </h4>
-                </React.Fragment>
-              | None => React.null
-              }}
            </header>
+           /* <Gatsby.Link _to="/critics/" activeClassName>
+                {"K-Critics" |> text}
+              </Gatsby.Link>*/
            {if (showLangSwitch) {
               let className =
                 Css.(
@@ -177,6 +171,7 @@ let make = (~title, ~page_description=?, ~pathname, ~showLangSwitch=true) => {
                       fontSize(em(0.8)),
                       textAlign(`center),
                       width(em(1.2)),
+                      textTransform(`uppercase),
                       selector(
                         "&:hover",
                         [borderStyle(`solid), borderTopStyle(`none)],
@@ -192,6 +187,13 @@ let make = (~title, ~page_description=?, ~pathname, ~showLangSwitch=true) => {
               );
             } else {
               React.null;
+            }}
+           {switch (page_description) {
+            | Some(des) =>
+              <React.Fragment>
+                <h4 className={css([S.page_description])}> {des |> text} </h4>
+              </React.Fragment>
+            | None => React.null
             }}
          </React.Fragment>}
     </WithCss>

@@ -84,15 +84,14 @@ let make = (~nphoto, ~active, ~onClick) => {
              //onClick={evt => ReactEvent.Mouse.preventDefault(evt)}
               <Gatsby.Img fixed=photo##fixed /> </a>
          </div>
-         <a
-           className={css([S.grid_item_wide(active)])}
+         <a className={css([S.grid_item_wide(active)])}>
            //href=nphoto##publicURL
-           target="_blank">
-           <Gatsby.Img fluid=photo##fluid />
-           <div className={css([S.label])}>
-             <span> {label |> text} </span>
-           </div>
-         </a>
+
+             <Gatsby.Img fluid=photo##fluid />
+             <div className={css([S.label])}>
+               <span> {label |> text} </span>
+             </div>
+           </a>
        </React.Fragment>}
   </WithCss>;
 };

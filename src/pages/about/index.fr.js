@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-const Layout = require('../../components/layout/Layout.bs.js').make;
+const Layout = require('../../components/layout/Layout.bs.js').make
 
 export default ({ data, location }) => {
   return < Layout showLangSwitch lang='fr' pathname={location.pathname} >

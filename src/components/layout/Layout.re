@@ -28,12 +28,11 @@ let make =
       ~showLangSwitch=true,
       ~children,
     ) => {
-  Js.log(pathname);
   let title = "The Naked Blog";
-  let locale = Locale.fromString(lang);
-  <ReactIntl.IntlProvider
-    locale={locale->Locale.toString}
-    messages={locale->Locale.translations->Locale.translationsToDict}>
+  let locale = lang;
+  let messages =
+    Locale.fromString(lang)->Locale.translations->Locale.translationsToDict;
+  <ReactIntl.IntlProvider locale messages>
     <React.Fragment>
       <BsReactHelmet>
         <html lang />

@@ -25,6 +25,7 @@ let get_global_style = () => {
       selector(
         "body",
         [
+          // marginTop(`zero),
           backgroundColor(Theme.bg_color),
           fontFamily(Theme.fontFamily),
           fontSize(
