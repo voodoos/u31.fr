@@ -1,19 +1,18 @@
 <section>
 
 ## Qui ?
-Je suis (bientôt ex-) doctorant en informatique et passionné. Mes principaux thèmes de
+Je suis (bientôt ex-) doctorant en informatique. Mes principaux thèmes de
 recherches sont la logique, la théorie de la démonstration et l'étude et la conception
 de langages de programmation fonctionnels. À côté de ça, je prend un plaisir malsain
 à lire la documentation de tous les nouveaux languages et outils que je croise
-sur mon chemin. D'ailleurs ce site est lui-même écrit en OCaml/ReasonML, traduit
-en ReactJS et ensuite compilé en un site statique par GatsbyJS...
+sur mon chemin.
 </section>
 <section>
 
 ## Pourquoi ce titre ?
 J'aimerais que ce site soit plus qu'un blog de programmation. Je tâcherai d'y
-présenter d'autres projets sans lien direct avec l'informatique, ainsi
-que les livres et films qui me plaisent.
+présenter d'autres projets sans lien direct avec l'informatique, comme mes
+origamis.
 
 *Le Festin Nu*, ou *Naked Lunch* en anglais, est un roman de science-fiction
 écrit par William S. Burroughs. Il a été adapté au cinéma par David Cronenberg
