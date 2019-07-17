@@ -47,5 +47,7 @@ quelques origamis de fort mauvais goût vous n'y trouverez pas de nudité.
   target='_blank' rel='noopener'>CSL 2017</a>, page 23:1-23:17. <a
   href='https://doi.org/10.4230/LIPIcs.CSL.2017.23' target='_blank'
   rel='noopener'>DOI 10.4230/LIPIcs.CSL.2017.23</a>. <a
-  href='papers/csl2017.pdf' target='_blank' rel='noopener'>Draft</a> dated 20 June 2017.
+  href='papers/csl2017.pdf' target='_blank' rel='noopener'>Draft</a> dated 20
+  June 2017.
+
 </section>
