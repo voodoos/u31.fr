@@ -12,7 +12,11 @@ export default ({ data, location }) => {
 
 export const query = graphql`
 query {
-  articles: allFile(filter: {sourceInstanceName: {eq: "articles"}, extension: {eq: "md"}}) {
+  articles: allFile(filter: {
+      sourceInstanceName: {eq: "articles"},
+      extension: {eq: "md"},
+      childMarkdownRemark: {frontmatter: {published: {eq: true}}}
+    }) {
     edges {
       node {
         childMarkdownRemark {
