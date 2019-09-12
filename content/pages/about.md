@@ -17,7 +17,7 @@ related projects and thoughts about books and movies I enjoy.
 *The Naked Lunch* is both of these: a science-fiction novel written by William
 S. Burroughs, and a movie by David Cronenberg inspired by the book.
 
-Sorry, you will not find nudes on this blog, apart from some obscene origamis.
+Sorry, you will not find nudes on this blog, apart from some obscene origamis...
 </section>
 <section>
 
