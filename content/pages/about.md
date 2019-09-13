@@ -2,7 +2,7 @@
 
 ## Who ?
 I am a (soon former) PhD student in computer science. My main research topics
-involve logic, proof-search, functional programming and language design. I am
+involve logic, proof-search, and functional programming language design. I am
 also a documentation addict and take an unnatural pleasure in learning new
 languages, technologies and tools. This website itself is written in
 OCaml/ReasonML, compiled to ReactJS and statically built with GatsbyJS...

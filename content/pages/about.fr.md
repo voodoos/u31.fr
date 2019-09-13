@@ -19,7 +19,7 @@ origamis.
 en 1991.
 
 J'espère que vous excuserez le titre un peu racoleur de ce blog, à part
-quelques origamis de fort mauvais goût vous n'y trouverez pas de nudité.
+quelques origamis de fort mauvais goût vous n'y trouverez pas de nudité...
 </section>
 <section>
 
