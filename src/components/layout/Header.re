@@ -110,13 +110,13 @@ let make = (~title, ~page_description=?, ~pathname, ~showLangSwitch=true) => {
       let win = Helpers.get_win();
       let yo = win |> Webapi.Dom.Window.pageYOffset;
 
-      if (!fixed && yo > 800.) {
-        set_fixed(_ => true);
-      };
+      // if (!fixed && yo > 800.) {
+      //   set_fixed(_ => true);
+      // };
 
-      if (fixed && yo < 200.) {
-        set_fixed(_ => false);
-      };
+      // if (fixed && yo < 200.) {
+      //   set_fixed(_ => false);
+      // };
     };
     Helpers.new_event_listener("scroll", scroll_handler, target);
     //None; // Deactivating small nav. Need some thinking. nice but useless ?

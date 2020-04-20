@@ -7,7 +7,7 @@ also a documentation addict and take an unnatural pleasure in learning new
 languages, technologies and tools. This website itself is written in
 OCaml/ReasonML, compiled to ReactJS and statically built with GatsbyJS...
 </section>
-<section>
+<!-- <section>
 
 ## Why is this blog Naked ?
 I would like this website to be more than a simple "code blog" with programming tips and
@@ -18,7 +18,7 @@ related projects and thoughts about books and movies I enjoy.
 S. Burroughs, and a movie by David Cronenberg inspired by the book.
 
 Sorry, you will not find nudes on this blog, apart from some obscene origamis...
-</section>
+</section> -->
 <section>
 
 ## Publications

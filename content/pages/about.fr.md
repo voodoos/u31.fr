@@ -7,7 +7,7 @@ de langages de programmation fonctionnels. À côté de ça, je prend un plaisir
 à lire la documentation de tous les nouveaux languages et outils que je croise
 sur mon chemin.
 </section>
-<section>
+<!-- <section>
 
 ## Pourquoi ce titre ?
 J'aimerais que ce site soit plus qu'un blog de programmation. Je tâcherai d'y
@@ -20,7 +20,7 @@ en 1991.
 
 J'espère que vous excuserez le titre un peu racoleur de ce blog, à part
 quelques origamis de fort mauvais goût vous n'y trouverez pas de nudité...
-</section>
+</section> -->
 <section>
 
 ## Publications
