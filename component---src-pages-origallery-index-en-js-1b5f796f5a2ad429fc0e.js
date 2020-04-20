@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{uBjB:function(e,a,t){"use strict";t.r(a),t.d(a,"query",(function(){return c}));t("q1tI");var n=t("qKvR"),o=t("JCWw").make,r=t("0nRV").make;a.default=function(e){var a=e.data,t=e.location;return Object(n.c)(o,{large:!0,pathname:t.pathname,page_description:"A collection of savagely tortured squares of paper"},Object(n.c)(r,{photos:a.allFile.edges}))};var c="2492256973"}}]);
+//# sourceMappingURL=component---src-pages-origallery-index-en-js-1b5f796f5a2ad429fc0e.js.map

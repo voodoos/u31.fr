@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{189:function(e,a,t){"use strict";t.r(a),t.d(a,"query",function(){return c});var n=t(8),r=(t(0),t(202).make),o=t(231).make;a.default=function(e){var a=e.data,t=e.location;return Object(n.c)(r,{large:!0,pathname:t.pathname,lang:"fr",page_description:"Une collection de feuilles de papier carrées impitoyablement torturées"},Object(n.c)(o,{photos:a.allFile.edges}))};var c="2492256973"}}]);
-//# sourceMappingURL=component---src-pages-origallery-index-fr-js-bda9edea786c4981ddbd.js.map
